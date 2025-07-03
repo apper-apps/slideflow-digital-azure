@@ -108,9 +108,9 @@ const goToPrevious = () => {
 
 const currentSlide = slides[currentSlideIndex]
 
-  return (
+return (
     <div 
-      className="presentation-container w-full h-screen relative overflow-hidden min-w-[320px] min-h-[240px]"
+      className="presentation-container w-full h-screen relative overflow-hidden min-w-[320px] min-h-[240px] flex flex-col"
       style={{
         minWidth: '320px',
         minHeight: '240px',
@@ -118,76 +118,81 @@ const currentSlide = slides[currentSlideIndex]
         height: '100vh'
       }}
     >
-      {/* Progress Bar */}
-      <ProgressBar 
-        currentSlide={currentSlideIndex} 
-        totalSlides={slides.length} 
-      />
-
-      {/* Slide Container */}
-      <div 
-        className="relative w-full h-full min-w-[320px] min-h-[240px]"
-        style={{
-          minWidth: '320px',
-          minHeight: '240px',
-          width: '100%',
-          height: '100%'
-        }}
-      >
-        <AnimatePresence mode="wait" custom={direction}>
-          <SlideRenderer
-            key={currentSlideIndex}
-            slide={currentSlide}
-            isActive={true}
-            direction={direction}
-          />
-        </AnimatePresence>
+{/* Progress Bar */}
+      <div className="flex-shrink-0">
+        <ProgressBar 
+          currentSlide={currentSlideIndex} 
+          totalSlides={slides.length} 
+        />
       </div>
+{/* Main Content Area */}
+      <div className="flex flex-1 relative overflow-hidden">
+        {/* Slide Container */}
+        <div 
+          className="flex-1 relative min-w-[320px] min-h-[240px] pr-0 lg:pr-64"
+          style={{
+            minWidth: '320px',
+            minHeight: '240px'
+          }}
+        >
+          <AnimatePresence mode="wait" custom={direction}>
+            <SlideRenderer
+              key={currentSlideIndex}
+              slide={currentSlide}
+              isActive={true}
+              direction={direction}
+            />
+          </AnimatePresence>
+        </div>
 
-      {/* Navigation Controls */}
-      <NavigationControls
-        currentSlide={currentSlideIndex}
-        totalSlides={slides.length}
-        onPrevious={goToPrevious}
-        onNext={goToNext}
-        onToggleFullscreen={toggleFullscreen}
-        isFullscreen={isFullscreen}
-      />
-      {/* Slide Navigation List with Scrolling */}
-      <div className="fixed top-4 right-4 z-30 slide-list-container">
-        <div className="glass-panel rounded-xl p-3 max-h-80 overflow-y-auto custom-scrollbar">
-          <div className="flex flex-col space-y-1">
-            <div className="text-xs text-white/60 mb-2 font-medium">
-              Slides ({slides.length})
+        {/* Slide Navigation Sidebar */}
+        <div className="fixed top-20 right-4 lg:relative lg:top-0 lg:right-0 z-30 lg:w-60 lg:flex-shrink-0 lg:p-4">
+          <div className="glass-panel rounded-xl p-4 max-h-80 lg:max-h-full lg:h-full overflow-y-auto custom-scrollbar">
+            <div className="flex flex-col space-y-2">
+              <div className="text-sm text-white/60 mb-3 font-medium text-center lg:text-left">
+                Slides ({slides.length})
+              </div>
+              {slides.map((slide, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`
+                    flex items-center gap-3 p-3 rounded-lg transition-all duration-200 
+                    text-left text-sm font-medium min-w-0 group
+                    ${index === currentSlideIndex 
+                      ? 'bg-primary/20 text-primary border border-primary/30' 
+                      : 'text-white/70 hover:bg-white/10 hover:text-white border border-transparent'
+                    }
+                  `}
+                  title={slide.title || `Slide ${index + 1}`}
+                >
+                  <div className={`
+                    w-2.5 h-2.5 rounded-full flex-shrink-0 transition-all duration-200
+                    ${index === currentSlideIndex 
+                      ? 'bg-primary scale-125' 
+                      : 'bg-white/30 group-hover:bg-white/50'
+                    }
+                  `} />
+                  <span className="truncate flex-1">
+                    {index + 1}. {slide.title || slide.type || 'Untitled'}
+                  </span>
+                </button>
+              ))}
             </div>
-            {slides.map((slide, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`
-                  flex items-center gap-2 p-2 rounded-lg transition-all duration-200 
-                  text-left text-xs font-medium min-w-0 group
-                  ${index === currentSlideIndex 
-                    ? 'bg-primary/20 text-primary border border-primary/30' 
-                    : 'text-white/70 hover:bg-white/10 hover:text-white border border-transparent'
-                  }
-                `}
-                title={slide.title || `Slide ${index + 1}`}
-              >
-                <div className={`
-                  w-2 h-2 rounded-full flex-shrink-0 transition-all duration-200
-                  ${index === currentSlideIndex 
-                    ? 'bg-primary scale-125' 
-                    : 'bg-white/30 group-hover:bg-white/50'
-                  }
-                `} />
-                <span className="truncate flex-1">
-                  {index + 1}. {slide.title || slide.type || 'Untitled'}
-                </span>
-              </button>
-            ))}
           </div>
         </div>
+      </div>
+
+{/* Navigation Footer */}
+      <div className="flex-shrink-0 bg-gradient-to-t from-black/20 to-transparent pt-4 pb-2">
+        <NavigationControls
+          currentSlide={currentSlideIndex}
+          totalSlides={slides.length}
+          onPrevious={goToPrevious}
+          onNext={goToNext}
+          onToggleFullscreen={toggleFullscreen}
+          isFullscreen={isFullscreen}
+        />
       </div>
 
       {/* Presentation Info removed to prevent popup interference */}
