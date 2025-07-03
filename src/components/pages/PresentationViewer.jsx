@@ -108,8 +108,16 @@ const PresentationViewer = () => {
 
   const currentSlide = slides[currentSlideIndex]
 
-  return (
-    <div className="presentation-container w-full h-screen relative overflow-hidden">
+return (
+    <div 
+      className="presentation-container w-full h-screen relative overflow-hidden min-w-[320px] min-h-[240px]"
+      style={{
+        minWidth: '320px',
+        minHeight: '240px',
+        width: '100vw',
+        height: '100vh'
+      }}
+    >
       {/* Progress Bar */}
       <ProgressBar 
         currentSlide={currentSlideIndex} 
@@ -117,7 +125,15 @@ const PresentationViewer = () => {
       />
 
       {/* Slide Container */}
-      <div className="relative w-full h-full">
+      <div 
+        className="relative w-full h-full min-w-[320px] min-h-[240px]"
+        style={{
+          minWidth: '320px',
+          minHeight: '240px',
+          width: '100%',
+          height: '100%'
+        }}
+      >
         <AnimatePresence mode="wait" custom={direction}>
           <SlideRenderer
             key={currentSlideIndex}

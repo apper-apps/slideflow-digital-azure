@@ -45,8 +45,8 @@ const SlideRenderer = ({ slide, isActive, direction = 'forward' }) => {
   }
 
   return (
-    <motion.div
-      className="w-full h-full absolute inset-0"
+<motion.div
+      className="w-full h-full absolute inset-0 min-w-[320px] min-h-[240px]"
       custom={direction}
       variants={slideVariants}
       initial="enter"
@@ -56,8 +56,16 @@ const SlideRenderer = ({ slide, isActive, direction = 'forward' }) => {
         duration: 0.3,
         ease: "easeInOut"
       }}
+      style={{
+        minWidth: '320px',
+        minHeight: '240px',
+        width: '100%',
+        height: '100%'
+      }}
     >
-      {getSlideComponent()}
+      <div className="w-full h-full min-w-[320px] min-h-[240px] overflow-hidden">
+        {getSlideComponent()}
+      </div>
     </motion.div>
   )
 }

@@ -119,8 +119,34 @@ html, body {
 .presentation-container {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+  min-width: 320px !important;
+  min-height: 240px !important;
 }
 
 .presentation-container::-webkit-scrollbar {
   display: none; /* WebKit */
+}
+
+/* Canvas safety - prevent zero dimensions */
+canvas, img, video {
+  min-width: 1px !important;
+  min-height: 1px !important;
+}
+
+/* Slide container safety */
+.presentation-container > div,
+.presentation-container .relative {
+  min-width: 320px !important;
+  min-height: 240px !important;
+}
+
+/* Motion div safety for external scripts */
+[data-framer-motion] {
+  min-width: 320px !important;
+  min-height: 240px !important;
+}
+
+/* Prevent layout shifts that could cause canvas errors */
+.presentation-container * {
+  box-sizing: border-box;
 }
