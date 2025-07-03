@@ -62,8 +62,8 @@ const SlideRenderer = ({ slide, isActive, direction = 'forward' }) => {
         width: '100%',
         height: '100%'
       }}
-    >
-      <div className="w-full h-full min-w-[320px] min-h-[240px] overflow-hidden">
+>
+      <div className="w-full h-full min-w-[320px] min-h-[240px] overflow-hidden canvas-ready">
         {getSlideComponent()}
       </div>
     </motion.div>

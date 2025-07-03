@@ -64,9 +64,31 @@ html, body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 212, 255, 0.8);
+background: rgba(0, 212, 255, 0.8);
 }
 
+/* Slide list scrollbar styling */
+.slide-list-container .custom-scrollbar {
+  scrollbar-width: thin;
+}
+
+.slide-list-container .custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slide-list-container .custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.slide-list-container .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.4);
+  border-radius: 8px;
+}
+
+.slide-list-container .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.7);
+}
 /* Toast notifications styling */
 .Toastify__toast-container {
   z-index: 9999;
@@ -127,10 +149,26 @@ html, body {
   display: none; /* WebKit */
 }
 
-/* Canvas safety - prevent zero dimensions */
+/* Canvas safety - prevent zero dimensions and ensure ready state */
 canvas, img, video {
   min-width: 1px !important;
   min-height: 1px !important;
+}
+
+/* Canvas-ready container for external scripts */
+.canvas-ready {
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas-ready canvas,
+.canvas-ready img,
+.canvas-ready video {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 320px !important;
+  min-height: 240px !important;
+  object-fit: contain;
 }
 
 /* Slide container safety */
@@ -149,4 +187,16 @@ canvas, img, video {
 /* Prevent layout shifts that could cause canvas errors */
 .presentation-container * {
   box-sizing: border-box;
+}
+
+/* Smooth transitions without layout interruption */
+.presentation-container .relative {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Ensure stable dimensions during slide changes */
+.presentation-container [data-framer-motion] * {
+  min-width: inherit !important;
+  min-height: inherit !important;
 }

@@ -42,19 +42,17 @@ const PresentationViewer = () => {
     }
   }
 
-  const goToNext = () => {
+const goToNext = () => {
     if (currentSlideIndex < slides.length - 1) {
       setDirection('forward')
       setCurrentSlideIndex(prev => prev + 1)
-      toast.info(`Slide ${currentSlideIndex + 2} of ${slides.length}`)
     }
   }
 
-  const goToPrevious = () => {
+const goToPrevious = () => {
     if (currentSlideIndex > 0) {
       setDirection('backward')
       setCurrentSlideIndex(prev => prev - 1)
-      toast.info(`Slide ${currentSlideIndex} of ${slides.length}`)
     }
   }
 
@@ -154,38 +152,28 @@ return (
         isFullscreen={isFullscreen}
       />
 
-      {/* Slide Thumbnails (hidden by default, can be toggled) */}
-      <div className="fixed top-4 right-4 z-30 hidden">
-        <div className="glass-panel rounded-xl p-2 flex space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`
-                w-3 h-3 rounded-full transition-all duration-200
-                ${index === currentSlideIndex 
-                  ? 'bg-primary scale-125' 
-                  : 'bg-white/30 hover:bg-white/50'
-                }
-              `}
-/>
-          ))}
+{/* Slide Thumbnails List with Scrolling */}
+      <div className="fixed top-4 right-4 z-30 hidden slide-list-container">
+        <div className="glass-panel rounded-xl p-2 max-h-80 overflow-y-auto custom-scrollbar">
+          <div className="flex flex-col space-y-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`
+                  w-3 h-3 rounded-full transition-all duration-200 flex-shrink-0
+                  ${index === currentSlideIndex 
+                    ? 'bg-primary scale-125' 
+                    : 'bg-white/30 hover:bg-white/50'
+                  }
+                `}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Presentation Info (only visible in dev mode) */}
-      {/* eslint-disable-next-line no-undef */}
-      {process.env.NODE_ENV === 'development' && (
-        <div className="fixed top-4 left-4 z-30 glass-panel rounded-lg p-3 text-sm">
-          <div className="text-white font-medium">SlideFlow Pro</div>
-          <div className="text-gray-300">
-            {currentSlide?.title} ({currentSlideIndex + 1}/{slides.length})
-          </div>
-          <div className="text-gray-400 text-xs">
-            Type: {currentSlide?.type} | Layout: {currentSlide?.layout}
-          </div>
-</div>
-      )}
+{/* Presentation Info removed to prevent popup interference */}
     </div>
   )
 }
