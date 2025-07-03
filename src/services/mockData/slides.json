@@ -1,0 +1,410 @@
+[
+  {
+    "Id": 1,
+    "title": "AI-Powered Business Solutions",
+    "subtitle": "Transforming Business Operations",
+    "description": "Driving Efficiency, Enhancing Experience, and Unlocking New Value",
+    "type": "title",
+    "layout": "center",
+    "content": {
+      "mainTitle": "AI-Powered Business Solutions",
+      "subtitle": "Transforming Business Operations",
+      "tagline": "Driving Efficiency, Enhancing Experience, and Unlocking New Value",
+      "company": "Your Company Logo",
+      "branding": true
+    }
+  },
+  {
+    "Id": 2,
+    "title": "Introduction & Overview",
+    "subtitle": "The Dawn of the AI Employee: Augmenting Your Workforce",
+    "type": "content",
+    "layout": "bullet-points",
+    "content": {
+      "mainTitle": "The Dawn of the AI Employee",
+      "subtitle": "Augmenting Your Workforce",
+      "points": [
+        "Beyond automation: AI as intelligent agents",
+        "Understands complexity, adapts to changing goals",
+        "Powered by ML & NLP for smart decisions",
+        "Continuously learns and evolves"
+      ]
+    }
+  },
+  {
+    "Id": 3,
+    "title": "Problem Statement",
+    "subtitle": "Navigating Complexity in a Dynamic Landscape",
+    "type": "content",
+    "layout": "problem-grid",
+    "content": {
+      "mainTitle": "Navigating Complexity in a Dynamic Landscape",
+      "problems": [
+        {
+          "title": "High Customer Expectations",
+          "description": "Modern customers demand instant, personalized service"
+        },
+        {
+          "title": "Information Overload",
+          "description": "Overload of inquiries and routine tasks"
+        },
+        {
+          "title": "Service Inconsistency",
+          "description": "Varying quality across touchpoints"
+        },
+        {
+          "title": "Data Silos",
+          "description": "Poor insights and disconnected systems"
+        },
+        {
+          "title": "Employee Burnout",
+          "description": "Repetitive work leads to decreased productivity"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 4,
+    "title": "Our AI-Powered Solution",
+    "subtitle": "Intelligent Agents for Business Transformation",
+    "type": "content",
+    "layout": "solution-features",
+    "content": {
+      "mainTitle": "Intelligent Agents for Business Transformation",
+      "features": [
+        {
+          "title": "Autonomous & Semi-Autonomous Agents",
+          "description": "Smart agents that work independently or with human oversight"
+        },
+        {
+          "title": "Easy Integration",
+          "description": "Seamless integration with existing systems"
+        },
+        {
+          "title": "Always-On 24/7 Support",
+          "description": "Round-the-clock availability for your customers"
+        },
+        {
+          "title": "Multi-Department Functionality",
+          "description": "Works across sales, support, operations, and more"
+        },
+        {
+          "title": "Human-in-the-Loop Design",
+          "description": "Empowers humans while maintaining control"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 5,
+    "title": "Key Features & Capabilities",
+    "subtitle": "Advanced AI Technology at Your Service",
+    "type": "content",
+    "layout": "capabilities-grid",
+    "content": {
+      "mainTitle": "Key Features & Capabilities",
+      "capabilities": [
+        {
+          "title": "Autonomous Operations",
+          "description": "Smart triggers and automated workflows",
+          "icon": "Zap"
+        },
+        {
+          "title": "Context-Aware Decisions",
+          "description": "Understanding nuance and business context",
+          "icon": "Brain"
+        },
+        {
+          "title": "Goal-Driven Actions",
+          "description": "Adaptive responses based on objectives",
+          "icon": "Target"
+        },
+        {
+          "title": "Real-Time Communication",
+          "description": "Instant insights and status updates",
+          "icon": "MessageSquare"
+        },
+        {
+          "title": "Automated Learning",
+          "description": "Continuous data analysis and improvement",
+          "icon": "TrendingUp"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 6,
+    "title": "Business Value & Benefits",
+    "subtitle": "Measurable Impact on Your Bottom Line",
+    "type": "content",
+    "layout": "benefits-showcase",
+    "content": {
+      "mainTitle": "Business Value & Benefits",
+      "benefits": [
+        {
+          "title": "Increased Efficiency",
+          "description": "Lower operational costs through automation",
+          "metric": "40% Cost Reduction",
+          "icon": "TrendingUp"
+        },
+        {
+          "title": "24/7 Customer Support",
+          "description": "Always-available service = happier clients",
+          "metric": "95% Satisfaction",
+          "icon": "Clock"
+        },
+        {
+          "title": "Strategic Focus",
+          "description": "Human teams focus on creative strategy",
+          "metric": "60% More Strategic Work",
+          "icon": "Lightbulb"
+        },
+        {
+          "title": "Proactive Resolution",
+          "description": "Issues resolved before they escalate",
+          "metric": "80% Faster Response",
+          "icon": "Shield"
+        },
+        {
+          "title": "Better Decisions",
+          "description": "Deep insights for faster, better choices",
+          "metric": "3x Better Insights",
+          "icon": "BarChart3"
+        },
+        {
+          "title": "Risk Control",
+          "description": "Improved compliance and risk management",
+          "metric": "99% Compliance",
+          "icon": "ShieldCheck"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 7,
+    "title": "Case Study - Hospitality",
+    "subtitle": "AI-Powered Travel Concierge",
+    "type": "case-study",
+    "layout": "case-study",
+    "content": {
+      "industry": "Hospitality",
+      "title": "AI-Powered Travel Concierge",
+      "problem": "Missed bookings and poor customer service",
+      "solution": "24/7 AI concierge system built with n8n automation",
+      "outcome": "Improved communication and guest satisfaction",
+      "metrics": [
+        {
+          "label": "Booking Conversion",
+          "value": "+35%",
+          "icon": "TrendingUp"
+        },
+        {
+          "label": "Response Time",
+          "value": "< 30 sec",
+          "icon": "Clock"
+        },
+        {
+          "label": "Guest Satisfaction",
+          "value": "4.8/5",
+          "icon": "Star"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 8,
+    "title": "Case Study - Healthcare",
+    "subtitle": "Streamlining Patient Engagement",
+    "type": "case-study",
+    "layout": "case-study",
+    "content": {
+      "industry": "Healthcare",
+      "title": "Streamlining Patient Engagement",
+      "problem": "Overwhelmed administrative teams",
+      "solution": "AI agent automates patient inquiries and scheduling",
+      "outcome": "Reduced staff workload and better patient access",
+      "metrics": [
+        {
+          "label": "Admin Time Saved",
+          "value": "50%",
+          "icon": "Clock"
+        },
+        {
+          "label": "Appointment Bookings",
+          "value": "+70%",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Patient Satisfaction",
+          "value": "92%",
+          "icon": "Heart"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 9,
+    "title": "Case Study - Education",
+    "subtitle": "Personalized Learning & Parent Automation",
+    "type": "case-study",
+    "layout": "case-study",
+    "content": {
+      "industry": "Education",
+      "title": "Personalized Learning & Parent Automation",
+      "problem": "Manual course management and email handling",
+      "solution": "AI for LMS automation and parent email summaries",
+      "outcome": "Efficient school operations and communication",
+      "metrics": [
+        {
+          "label": "Admin Efficiency",
+          "value": "+60%",
+          "icon": "Zap"
+        },
+        {
+          "label": "Parent Engagement",
+          "value": "+45%",
+          "icon": "Users"
+        },
+        {
+          "label": "Teacher Satisfaction",
+          "value": "89%",
+          "icon": "GraduationCap"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 10,
+    "title": "Sample Workflow",
+    "subtitle": "Intelligent Customer Experience Agent",
+    "type": "workflow",
+    "layout": "workflow-diagram",
+    "content": {
+      "mainTitle": "Intelligent Customer Experience Agent",
+      "description": "See how our AI handles customer interactions seamlessly",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Query Received",
+          "description": "Customer initiates chat or support request",
+          "icon": "MessageSquare",
+          "trigger": true
+        },
+        {
+          "id": 2,
+          "title": "AI Greeting",
+          "description": "Personalized welcome and context gathering",
+          "icon": "Smile",
+          "action": true
+        },
+        {
+          "id": 3,
+          "title": "Intent Analysis",
+          "description": "AI analyzes request and determines best response",
+          "icon": "Brain",
+          "action": true
+        },
+        {
+          "id": 4,
+          "title": "Response or Escalation",
+          "description": "Provide solution or escalate to human agent",
+          "icon": "ArrowRight",
+          "decision": true
+        },
+        {
+          "id": 5,
+          "title": "Feedback Collection",
+          "description": "Gather satisfaction feedback and learning data",
+          "icon": "Star",
+          "outcome": true
+        }
+      ],
+      "result": "Quick, seamless, human-like customer experience"
+    }
+  },
+  {
+    "Id": 11,
+    "title": "Future Roadmap",
+    "subtitle": "Innovating for Tomorrow's Needs",
+    "type": "roadmap",
+    "layout": "roadmap-timeline",
+    "content": {
+      "mainTitle": "Future Roadmap",
+      "subtitle": "Innovating for Tomorrow's Needs",
+      "roadmapItems": [
+        {
+          "phase": "Q1 2024",
+          "title": "Predictive Analytics",
+          "description": "Advanced forecasting and trend analysis",
+          "icon": "TrendingUp",
+          "status": "planning"
+        },
+        {
+          "phase": "Q2 2024",
+          "title": "Voice & Image Recognition",
+          "description": "Multi-modal AI capabilities",
+          "icon": "Mic",
+          "status": "development"
+        },
+        {
+          "phase": "Q3 2024",
+          "title": "Extended Integrations",
+          "description": "Connect with more business tools",
+          "icon": "Link",
+          "status": "planning"
+        },
+        {
+          "phase": "Q4 2024",
+          "title": "Dynamic Knowledge Base",
+          "description": "Self-updating information systems",
+          "icon": "Database",
+          "status": "research"
+        },
+        {
+          "phase": "2025",
+          "title": "Ethical AI Framework",
+          "description": "Bias-aware and responsible AI systems",
+          "icon": "Shield",
+          "status": "research"
+        }
+      ]
+    }
+  },
+  {
+    "Id": 12,
+    "title": "Conclusion & Call to Action",
+    "subtitle": "Ready for Transformation?",
+    "type": "cta",
+    "layout": "call-to-action",
+    "content": {
+      "mainTitle": "Ready for Transformation?",
+      "subtitle": "Our AI solutions are intelligent, adaptable, and human-centered",
+      "ctaItems": [
+        {
+          "title": "Schedule a Demo",
+          "description": "See our AI agents in action",
+          "icon": "Calendar",
+          "primary": true
+        },
+        {
+          "title": "Meet Our Experts",
+          "description": "Discuss your specific needs",
+          "icon": "Users",
+          "primary": false
+        },
+        {
+          "title": "Explore Real ROI",
+          "description": "Calculate your potential savings",
+          "icon": "Calculator",
+          "primary": false
+        }
+      ],
+      "contactInfo": {
+        "title": "Contact Us Today",
+        "email": "contact@company.com",
+        "phone": "+1 (555) 123-4567",
+        "website": "www.company.com"
+      }
+    }
+  }
+]
