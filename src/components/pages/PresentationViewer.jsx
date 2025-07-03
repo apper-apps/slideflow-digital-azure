@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { toast } from "react-toastify";
-import SlideRenderer from "@/components/organisms/SlideRenderer";
-import Empty from "@/components/ui/Empty";
-import Error from "@/components/ui/Error";
-import Loading from "@/components/ui/Loading";
-import ProgressBar from "@/components/molecules/ProgressBar";
-import NavigationControls from "@/components/molecules/NavigationControls";
 import useFullscreen from "@/hooks/useFullscreen";
 import useKeyboardNavigation from "@/hooks/useKeyboardNavigation";
+import SlideRenderer from "@/components/organisms/SlideRenderer";
+import NavigationControls from "@/components/molecules/NavigationControls";
+import ProgressBar from "@/components/molecules/ProgressBar";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import slidesData from "@/services/mockData/slides.json";
 import { presentationService } from "@/services/api/presentationService";
+
 const PresentationViewer = () => {
   const [slides, setSlides] = useState([])
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
@@ -151,30 +153,46 @@ return (
         onToggleFullscreen={toggleFullscreen}
         isFullscreen={isFullscreen}
       />
+/>
 
-{/* Slide Thumbnails List with Scrolling */}
-      <div className="fixed top-4 right-4 z-30 hidden slide-list-container">
-        <div className="glass-panel rounded-xl p-2 max-h-80 overflow-y-auto custom-scrollbar">
-          <div className="flex flex-col space-y-2">
-            {slides.map((_, index) => (
+      {/* Slide Navigation List with Scrolling */}
+      <div className="fixed top-4 right-4 z-30 slide-list-container">
+        <div className="glass-panel rounded-xl p-3 max-h-80 overflow-y-auto custom-scrollbar">
+          <div className="flex flex-col space-y-1">
+            <div className="text-xs text-white/60 mb-2 font-medium">
+              Slides ({slides.length})
+            </div>
+            {slides.map((slide, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`
-                  w-3 h-3 rounded-full transition-all duration-200 flex-shrink-0
+                  flex items-center gap-2 p-2 rounded-lg transition-all duration-200 
+                  text-left text-xs font-medium min-w-0 group
                   ${index === currentSlideIndex 
-                    ? 'bg-primary scale-125' 
-                    : 'bg-white/30 hover:bg-white/50'
+                    ? 'bg-primary/20 text-primary border border-primary/30' 
+                    : 'text-white/70 hover:bg-white/10 hover:text-white border border-transparent'
                   }
                 `}
-              />
+                title={slide.title || `Slide ${index + 1}`}
+              >
+                <div className={`
+                  w-2 h-2 rounded-full flex-shrink-0 transition-all duration-200
+                  ${index === currentSlideIndex 
+                    ? 'bg-primary scale-125' 
+                    : 'bg-white/30 group-hover:bg-white/50'
+                  }
+                `} />
+                <span className="truncate flex-1">
+                  {index + 1}. {slide.title || slide.type || 'Untitled'}
+                </span>
+              </button>
             ))}
           </div>
         </div>
       </div>
 
-{/* Presentation Info removed to prevent popup interference */}
+      {/* Presentation Info removed to prevent popup interference */}
     </div>
-  )
 }
 export default PresentationViewer
