@@ -106,9 +106,9 @@ const goToPrevious = () => {
     )
   }
 
-  const currentSlide = slides[currentSlideIndex]
+const currentSlide = slides[currentSlideIndex]
 
-return (
+  return (
     <div 
       className="presentation-container w-full h-screen relative overflow-hidden min-w-[320px] min-h-[240px]"
       style={{
@@ -153,8 +153,6 @@ return (
         onToggleFullscreen={toggleFullscreen}
         isFullscreen={isFullscreen}
       />
-/>
-
       {/* Slide Navigation List with Scrolling */}
       <div className="fixed top-4 right-4 z-30 slide-list-container">
         <div className="glass-panel rounded-xl p-3 max-h-80 overflow-y-auto custom-scrollbar">
@@ -194,5 +192,7 @@ return (
 
       {/* Presentation Info removed to prevent popup interference */}
     </div>
-}
-export default PresentationViewer
+  );
+};
+
+export default PresentationViewer;
