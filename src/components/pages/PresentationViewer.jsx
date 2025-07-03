@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { toast } from "react-toastify";
-import { presentationService } from "@/services/api/presentationService";
 import SlideRenderer from "@/components/organisms/SlideRenderer";
-import NavigationControls from "@/components/molecules/NavigationControls";
-import ProgressBar from "@/components/molecules/ProgressBar";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
-import useKeyboardNavigation from "@/hooks/useKeyboardNavigation";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import ProgressBar from "@/components/molecules/ProgressBar";
+import NavigationControls from "@/components/molecules/NavigationControls";
 import useFullscreen from "@/hooks/useFullscreen";
-
+import useKeyboardNavigation from "@/hooks/useKeyboardNavigation";
+import { presentationService } from "@/services/api/presentationService";
 const PresentationViewer = () => {
   const [slides, setSlides] = useState([])
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
@@ -153,11 +152,10 @@ const PresentationViewer = () => {
                   : 'bg-white/30 hover:bg-white/50'
                 }
               `}
-            />
+/>
           ))}
         </div>
       </div>
-</div>
 
       {/* Presentation Info (only visible in dev mode) */}
       {/* eslint-disable-next-line no-undef */}
@@ -170,9 +168,9 @@ const PresentationViewer = () => {
           <div className="text-gray-400 text-xs">
             Type: {currentSlide?.type} | Layout: {currentSlide?.layout}
           </div>
-        </div>
+</div>
       )}
+    </div>
   )
 }
-
 export default PresentationViewer
